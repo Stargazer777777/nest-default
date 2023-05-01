@@ -12,7 +12,6 @@ export class GuardGuard implements CanActivate {
       'role',
       context.getHandler(),
     ); // 读取meta中的role
-    console.log(roles, '=================>');
     const ctx = context.switchToHttp();
     const req = ctx.getRequest<Request>();
     if (true) {

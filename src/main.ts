@@ -5,7 +5,6 @@ import { config } from './utils/config';
 import { ValidationPipe } from '@nestjs/common';
 import { ResponseInterceptor } from '@/interceptors/responseInterceptor';
 import { HttpFilter } from '@/filters/httpFilter';
-import { join } from 'path';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
