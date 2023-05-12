@@ -1,4 +1,9 @@
-import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
+import {
+  CanActivate,
+  ExecutionContext,
+  HttpException,
+  Injectable,
+} from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { Observable } from 'rxjs';
 
@@ -18,6 +23,6 @@ export class GuardGuard implements CanActivate {
       // access condition
       return true;
     }
-    return false;
+    throw new HttpException('权限不足', 401);
   }
 }

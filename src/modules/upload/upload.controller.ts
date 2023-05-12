@@ -13,7 +13,7 @@ export class UploadController {
   @UseInterceptors(FileInterceptor('file')) // 拦截属性名为file的文件并上传
   upload(@UploadedFile() file: any) {
     // file 为上传的文件对象
-    const url = config.server.host + '/files/' + file.filename;
+    const url = `${config.server.host}:${config.server.port}/files/${file.filename}`;
     return url;
   }
 }
